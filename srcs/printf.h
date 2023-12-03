@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+        */
+/*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 21:30:15 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/11/24 21:30:23 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/03 15:49:51 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef PRINTF_H
+# define PRINTF_H
 
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdio.h>
 # include <limits.h>
 
-int	ft_printf(const char *text, ...);
+int		ft_printf(const char *s, ...);
 
-int	ft_len_nb(long n);
+char	*ft_strdup(const char *s1);
 
-int	ft_putchar(char c);
+void	ft_putchar(char c, int *compteur);
 
-int	ft_putstr(char *str);
+void	ft_putstr(char *str, int *compteur);
 
-int	ft_putnbr_base(int nbr, char *base);
+void	ft_putnbr(int nb, int *compteur);
 
-int	ft_pointeur(void *ptr, char *base);
+void	ft_putnbr_unsigned(int nb, int *compteur);
 
-int	ft_putnbr_base_neg(unsigned int nbr, char *base);
-
-int	ft_len_nb_hexa(unsigned long n);
-
-int	ft_putnbr_base_hex(unsigned int nbr, char *base);
 
 #endif
