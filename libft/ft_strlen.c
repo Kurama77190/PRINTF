@@ -6,11 +6,11 @@
 /*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 04:07:57 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/04 16:54:24 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:21:54 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 size_t	ft_strlen(const char *str)
 {
