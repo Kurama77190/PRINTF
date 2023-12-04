@@ -6,11 +6,11 @@
 /*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 14:02:29 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/03 16:38:08 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/04 16:54:32 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	ft_putchar(char c, int *compteur)
 {
@@ -77,15 +77,15 @@ void	ft_putnbr_unsigned(int nb, int *compteur)
 }
 
 void	ft_putnbr_base(\
-		unsigned long long nbr, char *base, int *ret_value, char c)
+		unsigned long long nbr, char *base, int *compteur, char c)
 {
 	if (c == 'p')
 	{
 		if (nbr != 0)
-			ft_putstr("0x", ret_value);
+			ft_putstr("0x", compteur);
 		if (nbr == 0)
 		{
-			ft_putstr("(nil)", ret_value);
+			ft_putstr("(nil)", compteur);
 			return ;
 		}
 		c++;
@@ -93,12 +93,12 @@ void	ft_putnbr_base(\
 	if (c != 'p')
 	{
 		if (nbr >= 16)
-			ft_putnbr_base(nbr / 16, base, ret_value, c);
-		ft_putchar(base[nbr % 16], ret_value);
+			ft_putnbr_base(nbr / 16, base, compteur, c);
+		ft_putchar(base[nbr % 16], compteur);
 	}
 }
 
-	
+
 // 	int position_ds_tableau = c /ft_strlen(base);
 // 	char char_a_imprimer = base[position_ds_tableau];
 // }
@@ -119,13 +119,22 @@ void	ft_putnbr_base(\
 // 	printf("nombre de lettre : %d", compteur);
 
 // }
-int main (void)
-{
-	int i = 1;
-	char c = 'p';
-	char *base = "0123456789abcdef";
-	int compteur = 0;
-	
-	
-	ft_putnbr_base(i, base, &compteur, c);
-}
+
+// int main (void)
+// {
+// 	int i = 1654654;
+// 	char c = 'X';
+// 	char *base = "0123456789abcdef";
+// 	int compteur = 0;
+
+// 	printf("%X", i);
+// 	printf("\n");
+// 	ft_putnbr_base(i, base, &compteur, c);
+// 	printf("\n");
+// 	printf("%d\n", compteur);
+// }
+
+// int main (void)
+// {
+
+// }

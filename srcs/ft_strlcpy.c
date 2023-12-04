@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 14:01:44 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/04 16:54:15 by sben-tay         ###   ########.fr       */
+/*   Created: 2023/11/14 04:07:53 by sben-tay          #+#    #+#             */
+/*   Updated: 2023/12/04 16:54:20 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strdup(const char *s1)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	char	*str;
-	size_t	len;
 	size_t	i;
 
 	i = 0;
-	len = ft_strlen(s1);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	while (s1[i])
+	if (size == 0)
+		return (ft_strlen(src));
+	if (size == 1)
 	{
-		str[i] = s1[i];
+		dst[0] = '\0';
+		return (ft_strlen(src));
+	}
+	while (src[i] && i < size - 1)
+	{
+		dst[i] = src[i];
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	if (i < size)
+		dst[i] = '\0';
+	return (ft_strlen(src));
 }
