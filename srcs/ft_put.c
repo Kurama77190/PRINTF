@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 14:02:29 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/04 16:54:32 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/04 19:26:55 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	ft_putstr(char *str, int *compteur)
 	}
 }
 
-
 void	ft_putnbr(int nb, int *compteur)
 {
 	if (nb == INT_MIN)
@@ -61,7 +60,6 @@ void	ft_putnbr(int nb, int *compteur)
 		ft_putnbr(nb % 10, compteur);
 	}
 }
-
 
 void	ft_putnbr_unsigned(int nb, int *compteur)
 {
@@ -97,7 +95,6 @@ void	ft_putnbr_base(\
 		ft_putchar(base[nbr % 16], compteur);
 	}
 }
-
 
 // 	int position_ds_tableau = c /ft_strlen(base);
 // 	char char_a_imprimer = base[position_ds_tableau];

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:15:34 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/04 17:25:35 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/04 19:25:17 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 int	check_arg(char c, va_list arg, int *compteur)
 {
@@ -36,7 +35,6 @@ int	check_arg(char c, va_list arg, int *compteur)
 	return (1);
 }
 
-
 int	ft_printf(const char *s, ...)
 {
 	size_t		i;
@@ -50,7 +48,6 @@ int	ft_printf(const char *s, ...)
 	compteur = 0;
 	str = ft_strdup(s);
 	va_start(arg, s);
-
 	while (str[i])
 	{
 		if (str[i] == '%')
@@ -65,4 +62,3 @@ int	ft_printf(const char *s, ...)
 	free(str);
 	return (compteur);
 }
-
