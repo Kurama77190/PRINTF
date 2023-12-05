@@ -6,7 +6,7 @@
 /*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:15:34 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/05 13:19:25 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/05 14:59:40 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,16 @@ int	ft_printf(const char *s, ...)
 // int main (void)
 // {
 // 	// char c = 'c';
-// 	// printf("%d", printf("voici une phrase de printf %c,", c));	
-// 	// printf("\n");
-// 	// printf("%d", ft_printf("voici une phrase de printf %c,", c));
+// 	printf("%d", printf("abc%"));	
+// 	printf("\n");
+// 	printf("%d", ft_printf("abc%"));
+// }
+
+
+
+
+
+
 // 	ft_printf("%d", -123456677);
 // 	printf("\n");
 // 	ft_printf("%d", -1234566733333337);
