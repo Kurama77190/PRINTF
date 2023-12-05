@@ -6,13 +6,13 @@
 /*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:15:34 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/05 12:02:24 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/05 12:15:08 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	check_arg(char c, va_list arg, int *compteur)
+void	check_arg(char c, va_list arg, int *compteur)
 {
 	if (c == 'c')
 		ft_putchar((char)va_arg(arg, int), compteur);
@@ -33,7 +33,7 @@ int	check_arg(char c, va_list arg, int *compteur)
 	else if (c == 'p')
 		ft_putnbr_base((unsigned long long)va_arg(arg, unsigned long long), \
 		"0123456789abcdef", compteur, c);
-	return (1);
+	return ;
 }
 
 int	ft_printf(const char *s, ...)

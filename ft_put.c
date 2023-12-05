@@ -6,7 +6,7 @@
 /*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 14:02:29 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/05 12:13:16 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/05 12:14:35 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,11 +122,11 @@ void	ft_putnbr_base(\
 // 	printf("%d\n", compteur);
 // }
 
-int main (void)
-{
-	char *str = "salut les noobs";
-	int	compteur = 0;
-	ft_putstr(str, &compteur);
-	printf("\n");
-	printf("%d", compteur);
-}
+// int main (void)
+// {
+// 	char *str = "salut les noobs";
+// 	int	compteur = 0;
+// 	ft_putstr(str, &compteur);
+// 	printf("\n");
+// 	printf("%d", compteur);
+// }
