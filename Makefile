@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+         #
+#    By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/24 21:36:43 by sben-tay          #+#    #+#              #
-#    Updated: 2023/12/04 20:11:04 by sben-tay         ###   ########.fr        #
+#    Updated: 2023/12/05 12:35:07 by sben-tay         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,29 +21,29 @@ CFLAGS            = -Wall -Wextra -Werror
 
 NAME            = libftprintf.a
 
-GREEN = \033[32m
-GREY = \033[0;90m
-RED = \033[0;31m
-GOLD = \033[38;5;220m
-END = \033[0m
+# GREEN = \033[32m
+# GREY = \033[0;90m
+# RED = \033[0;31m
+# GOLD = \033[38;5;220m
+# END = \033[0m
 
-header:
-		@echo -e '\n\n'
-		@echo -e '$(GOLD)            *******     *****  ******* $(END)'
-		@echo -e '$(GOLD)          ******        ***    ******* $(END)'
-		@echo -e '$(GOLD)      *******                 ******* $(END)'
-		@echo -e '$(GOLD)     ******                 ******* $(END)'
-		@echo -e '$(GOLD)  *******                 ******* $(END)'
-		@echo -e '$(GOLD) ********************   *******      * $(END)'
-		@echo -e '$(GOLD) ********************   *******    *** $(END)'
-		@echo -e '$(GOLD)              *******   ******* ****** $(END)'
-		@echo -e '$(GOLD)              ******* $(END)'
-		@echo -e '$(GOLD)              ******* $(END)\n'
-		@echo -e '$(GREY)                                      Made by sben-tay | PRINTF_PROJECT$(END)\n\n'
+# header:
+# 		@echo -e '\n\n'
+# 		@echo -e '$(GOLD)            *******     *****  ******* $(END)'
+# 		@echo -e '$(GOLD)          ******        ***    ******* $(END)'
+# 		@echo -e '$(GOLD)      *******                 ******* $(END)'
+# 		@echo -e '$(GOLD)     ******                 ******* $(END)'
+# 		@echo -e '$(GOLD)  *******                 ******* $(END)'
+# 		@echo -e '$(GOLD) ********************   *******      * $(END)'
+# 		@echo -e '$(GOLD) ********************   *******    *** $(END)'
+# 		@echo -e '$(GOLD)              *******   ******* ****** $(END)'
+# 		@echo -e '$(GOLD)              ******* $(END)'
+# 		@echo -e '$(GOLD)              ******* $(END)\n'
+# 		@echo -e '$(GREY)                                      Made by sben-tay | PRINTF_PROJECT$(END)\n\n'
 
 all:            $(NAME) 
 
-$(NAME):        $(OBJS) header
+$(NAME):        $(OBJS) 
 				ar rcs $(NAME) $(OBJS)
 %.o:%.c            
 				$(CC) $(CFLAGS) -c $< -o $@

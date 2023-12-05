@@ -6,7 +6,7 @@
 /*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 14:02:29 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/05 12:14:35 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/05 13:08:45 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_putstr(char *str, int *compteur)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (ft_putstr("(null)", compteur));
 	while (str[i])
 	{
 		ft_putchar(str[i], compteur);

@@ -6,13 +6,13 @@
 /*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:15:34 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/05 12:15:08 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/05 13:19:25 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	check_arg(char c, va_list arg, int *compteur)
+int	check_arg(char c, va_list arg, int *compteur)
 {
 	if (c == 'c')
 		ft_putchar((char)va_arg(arg, int), compteur);
@@ -33,7 +33,9 @@ void	check_arg(char c, va_list arg, int *compteur)
 	else if (c == 'p')
 		ft_putnbr_base((unsigned long long)va_arg(arg, unsigned long long), \
 		"0123456789abcdef", compteur, c);
-	return ;
+	else
+		return (-1);
+	return (1);
 }
 
 int	ft_printf(const char *s, ...)
@@ -65,10 +67,53 @@ int	ft_printf(const char *s, ...)
 	return (compteur);
 }
 
-int main (void)
-{
-	char c = 'c';
-	printf("%d", printf("voici une phrase de printf %c,", c));	
-	printf("\n");
-	printf("%d", ft_printf("voici une phrase de printf %c,", c));
-}
+// int main (void)
+// {
+// 	// char c = 'c';
+// 	// printf("%d", printf("voici une phrase de printf %c,", c));	
+// 	// printf("\n");
+// 	// printf("%d", ft_printf("voici une phrase de printf %c,", c));
+// 	ft_printf("%d", -123456677);
+// 	printf("\n");
+// 	ft_printf("%d", -1234566733333337);
+// 	printf("\n");
+// 	ft_printf("%d", 123456677);
+// 	printf("\n");
+// 	ft_printf("%d", 111111113456111677);
+// 	printf("\n");
+// 	ft_printf("%s", "1222121213456677");
+// 	printf("\n");
+// 	ft_printf("%s%s%d", "-1222121213456677 ", "salut les zgueg ", 444);
+// 	printf("\n");
+// 	ft_printf("%x",5555);
+// 	printf("\n");
+// 	ft_printf("%p", 100000000);
+// 	printf("\n");
+	
+
+// }
+
+// int main()
+// {
+	
+// 	ft_printf("%c", 'a');
+// 	printf("\n");
+// 	ft_printf("%c%c%c*", '\0', '1', 1);
+// 	printf("\n");
+// 	ft_printf("%c small string", 'a');
+// 	printf("\n");
+// 	ft_printf("%c small string", '\0');
+// 	printf("\n");
+// 	ft_printf("the char is: %c", 'a');
+// 	printf("\n");
+// 	ft_printf("the char is: %c", '\0');
+// 	printf("\n");
+// 	ft_printf("n%cs", 'a');
+// 	printf("\n");
+// 	ft_printf("%c%c%c%c%c", 'a', 'i', 'u', 'e', 'o');
+// 	printf("\n");
+// 	ft_printf("l%cl%cl%cl%cl%c", 'a', 'i', 'u', 'e', 'o');
+// 	printf("\n");
+// 	ft_printf("l%cl%cl%cl%cl%c", '\0', '\0', '\0', 'e', '\0');
+// 	printf("\n");
+// }
