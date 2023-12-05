@@ -6,7 +6,7 @@
 /*   By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:15:34 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/04 19:25:17 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/05 00:47:05 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 int	check_arg(char c, va_list arg, int *compteur)
 {
-	if (c == 'c' || c == '%')
+	if (c == 'c')
 		ft_putchar((char)va_arg(arg, int), compteur);
-	if (c == 's')
+	else if (c == '%')
+		ft_putchar('%', compteur);
+	else if (c == 's')
 		ft_putstr(va_arg(arg, char *), compteur);
-	if (c == 'd' || c == 'i')
-		ft_putnbr(va_arg(arg, int), compteur);
-	if (c == 'u')
+	else if (c == 'd' || c == 'i')
+		ft_putnbr((int)va_arg(arg, int), compteur);
+	else if (c == 'u')
 		ft_putnbr_unsigned(va_arg(arg, unsigned int), compteur);
-	if (c == 'x')
-		ft_putnbr_base(va_arg(arg, unsigned int), \
+	else if (c == 'x')
+		ft_putnbr_base((unsigned int)va_arg(arg, unsigned int), \
 		"0123456789abcdef", compteur, c);
-	if (c == 'X')
-		ft_putnbr_base(va_arg(arg, unsigned int), \
+	else if (c == 'X')
+		ft_putnbr_base((unsigned int)va_arg(arg, unsigned int), \
 		"0123456789ABCDEF", compteur, c);
-	if (c == 'p')
-		ft_putnbr_base(va_arg(arg, unsigned int), \
+	else if (c == 'p')
+		ft_putnbr_base((unsigned long long)va_arg(arg, unsigned long long), \
 		"0123456789abcdef", compteur, c);
-	va_end(arg);
 	return (1);
 }
 
@@ -52,13 +53,22 @@ int	ft_printf(const char *s, ...)
 	{
 		if (str[i] == '%')
 		{
-			check_arg(str[i] + 1, arg, &compteur);
+			check_arg(str[i + 1], arg, &compteur);
 			i++;
 		}
 		else
 			ft_putchar(str[i], &compteur);
 		i++;
 	}
+	va_end(arg);
 	free(str);
 	return (compteur);
 }
+
+// int main (void)
+// {
+// 	char c = 'c';
+// 	printf("%d", printf("voici une phrase de printf %c,", c));	
+// 	printf("\n");
+// 	printf("%d", ft_printf("voici une phrase de printf %c,", c));
+// }

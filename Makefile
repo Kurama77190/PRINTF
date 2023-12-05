@@ -3,24 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+         #
+#    By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/24 21:36:43 by sben-tay          #+#    #+#              #
-#    Updated: 2023/12/04 17:17:13 by sben-tay         ###   ########.fr        #
+#    Updated: 2023/12/04 20:11:04 by sben-tay         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+SRCS            =   ft_printf.c ft_put.c \
+					ft_strdup.c	ft_strlcpy.c ft_strlen.c 
+					 
+OBJS            = $(SRCS:.c=.o)
 
+CC                = cc
+RM                = rm -f
+CFLAGS            = -Wall -Wextra -Werror
 
-
-NAME=libftprintf.a
-CC=cc
-CFLAGS=-Wall -Wextra -Werror
-RM=rm -f
-LIBFT = ./libft/ft_strdup.c ./libft/ft_strlcpy.c ./libft/ft_strlen.c
-SRCS = ./srcs/ft_printf.c ./srcs/ft_put.c
-OBJ = $(SRCS:.c=.o)
-OBJLibft = $(LIBFT:.c=.o)
+NAME            = libftprintf.a
 
 GREEN = \033[32m
 GREY = \033[0;90m
@@ -42,28 +41,19 @@ header:
 		@echo -e '$(GOLD)              ******* $(END)\n'
 		@echo -e '$(GREY)                                      Made by sben-tay | PRINTF_PROJECT$(END)\n\n'
 
-$(NAME): $(OBJ) $(OBJLibft)
-		@echo -e '$(GREY) Compiling $(END)$(GOLD)$(NAME)$(END)'
-		@ar rc $(NAME) $(OBJ) $(OBJLibft)
-		@ranlib $(NAME)
+all:            $(NAME) 
 
-%.o: %.c
-		@echo -e '$(GREY) Compiling $(END)$(GREEN)$<$(END)'
-		@$(CC) -I. -o $@ -c $? $(CFLAGS)
-
-all: header $(NAME)
-		@echo -e '\n$(GREY) Compilation $(GREEN)Done'
-
-dev: all bonus clean
-
+$(NAME):        $(OBJS) header
+				ar rcs $(NAME) $(OBJS)
+%.o:%.c            
+				$(CC) $(CFLAGS) -c $< -o $@
 clean:
-		@echo -e '$(GREY) Removing $(END)$(RED)Object$(END)'
-		@$(RM) $(OBJ) $(OBJLibft)
+				$(RM) $(OBJS) $(OBJS_BNS)
 
-fclean: clean
-		@echo -e '$(GREY) Removing $(END)$(RED)Program$(END)'
-		@$(RM) $(NAME)
+fclean:            clean
+				$(RM) $(NAME)
 
-re: fclean all
+re:             fclean $(NAME)
 
-.PHONY: all bonus clean fclean re dev header
+
+.PHONY:            all clean fclean re bonus

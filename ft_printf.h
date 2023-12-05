@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 21:30:15 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/04 17:07:30 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/05 01:13:25 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdio.h>
-# include <limits.h>
 # include <stdlib.h>
+
+# define UINT_MAX 4294967295
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 int		ft_printf(const char *s, ...);
 
@@ -29,7 +31,7 @@ void	ft_putstr(char *str, int *compteur);
 
 void	ft_putnbr(int nb, int *compteur);
 
-void	ft_putnbr_unsigned(int nb, int *compteur);
+void	ft_putnbr_unsigned(unsigned int nb, int *compteur);
 
 void	ft_putnbr_base(\
 		unsigned long long nbr, char *base, int *compteur, char c);
