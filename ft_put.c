@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+        */
+/*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 14:02:29 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/05 01:11:52 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/05 12:13:16 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@ void	ft_putchar(char c, int *compteur)
 
 void	ft_putstr(char *str, int *compteur)
 {
-	if (!str)
-		*compteur += write(1, "(null)", 6);
-	else
-		*compteur += write(1, str, ft_strlen(str));
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i], compteur);
+		i++;
+	}
 }
 
 void	ft_putnbr(int nb, int *compteur)
@@ -118,7 +122,11 @@ void	ft_putnbr_base(\
 // 	printf("%d\n", compteur);
 // }
 
-// int main (void)
-// {
-
-// }
+int main (void)
+{
+	char *str = "salut les noobs";
+	int	compteur = 0;
+	ft_putstr(str, &compteur);
+	printf("\n");
+	printf("%d", compteur);
+}

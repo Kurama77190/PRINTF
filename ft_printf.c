@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+        */
+/*   By: sben-tay <sben-tay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:15:34 by sben-tay          #+#    #+#             */
-/*   Updated: 2023/12/05 00:47:05 by sben-tay         ###   ########.fr       */
+/*   Updated: 2023/12/05 12:02:24 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ int	ft_printf(const char *s, ...)
 	return (compteur);
 }
 
-// int main (void)
-// {
-// 	char c = 'c';
-// 	printf("%d", printf("voici une phrase de printf %c,", c));	
-// 	printf("\n");
-// 	printf("%d", ft_printf("voici une phrase de printf %c,", c));
-// }
+int main (void)
+{
+	char c = 'c';
+	printf("%d", printf("voici une phrase de printf %c,", c));	
+	printf("\n");
+	printf("%d", ft_printf("voici une phrase de printf %c,", c));
+}
