@@ -4,7 +4,7 @@
 
 ###
 
-# Projet Printf - École 42
+# Projet Printf - École 42 | SAMY BEN TAYEB
 
 ![Language](https://img.shields.io/badge/language-C-blue)
 ![Progress](https://img.shields.io/badge/progress-completed-green)
@@ -14,8 +14,6 @@
 - [Objectifs](#objectifs)
 - [Fonctionnalités](#fonctionnalités)
 - [Utilisation](#comment-lutiliser)
-- [Tester le Projet](#tester-le-projet)
-- [Contributeurs](#contributeurs)
 
 ## Description
 Le projet `printf` de l'école 42 est une réplique de la fonction `printf` de la bibliothèque C standard. Il vise à approfondir les connaissances des étudiants en C, notamment sur les arguments variadiques, le formatage des chaînes et la gestion de la mémoire.
